@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>富域事業有限公司｜公司官網</title>
+  <meta name="description" content="富域事業有限公司｜提供專業服務與專案執行。歡迎洽詢合作。" />
+  <style>
+    :root{
+      --bg:#0b0f1a;
+      --card:#0f172a;
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --line:rgba(148,163,184,.18);
+      --brand:#60a5fa;
+      --brand2:#a78bfa;
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+        "Noto Sans TC","PingFang TC","Microsoft JhengHei", Arial, sans-serif;
+      background:
+        radial-gradient(1200px 800px at 15% 10%, rgba(96,165,250,.25), transparent 60%),
+        radial-gradient(900px 600px at 85% 20%, rgba(167,139,250,.18), transparent 60%),
+        linear-gradient(180deg, #050816 0%, #070b14 55%, #050816 100%);
+      color:var(--text);
+      line-height:1.65;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 64px;}
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(5,8,22,.55);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.5px;
+      text-decoration:none;
+    }
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 10px 25px rgba(96,165,250,.25);
+    }
+    .navlinks{display:flex; gap:14px; flex-wrap:wrap}
+    .navlinks a{
+      text-decoration:none;
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+      transition:.18s ease;
+    }
+    .navlinks a:hover{
+      color:var(--text);
+      border-color:var(--line);
+      background: rgba(15,23,42,.55);
+    }
+    .hero{
+      padding:44px 0 26px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .card{
+      background: rgba(15,23,42,.65);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-left{padding:28px 26px;}
+    .kicker{
+      display:inline-flex;
+      gap:8px; align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:14px;
+    }
+    .kdot{
+      width:8px; height:8px; border-radius:50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 4px rgba(96,165,250,.18);
+    }
+    h1{margin:0 0 10px; font-size:34px; line-height:1.18;}
+    .sub{margin:0; color:var(--muted); font-size:16px;}
+    .cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(15,23,42,.55);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:650;
+      transition:.18s ease;
+    }
+    .btn.primary{
+      border-color: rgba(96,165,250,.35);
+      background: linear-gradient(135deg, rgba(96,165,250,.25), rgba(167,139,250,.18));
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .hero-right{padding:18px;}
+    .mini{
+      padding:18px 18px;
+      display:grid;
+      gap:10px;
+    }
+    .mini h3{margin:0; font-size:14px; color:var(--muted); font-weight:700; letter-spacing:.3px;}
+    .stat{
+      padding:14px 14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(2,6,23,.35);
+    }
+    .stat b{display:block; font-size:16px; margin-bottom:4px;}
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    section{scroll-margin-top:80px}
+    .section{
+      margin-top:18px;
+      padding:22px 20px;
+    }
+    .section h2{margin:0 0 10px; font-size:20px;}
+    .muted{color:var(--muted)}
+    .feature{
+      padding:16px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(2,6,23,.25);
+      min-height:120px;
+    }
+    .feature h3{margin:0 0 6px; font-size:16px;}
+    .feature p{margin:0; color:var(--muted); font-size:14px;}
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .list{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:start;
+    }
+    .box{
+      padding:16px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(2,6,23,.25);
+    }
+    .kv{
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap:10px;
+      padding:10px 0;
+      border-bottom:1px dashed rgba(148,163,184,.18);
+    }
+    .kv:last-child{border-bottom:none}
+    .kv .k{color:var(--muted); font-size:14px}
+    .kv .v{font-weight:650}
+    footer{
+      margin-top:16px;
+      color:rgba(148,163,184,.75);
+      font-size:13px;
+      text-align:center;
+      padding:18px 0 0;
+    }
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr; padding-top:26px}
+      .grid{grid-template-columns:1fr}
+      .two{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      h1{font-size:30px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="回到頂端">
+        <span class="logo" aria-hidden="true"></span>
+        <span>富域事業有限公司</span>
+      </a>
+      <nav class="navlinks" aria-label="網站導覽">
+        <a href="#about">關於我們</a>
+        <a href="#services">服務項目</a>
+        <a href="#projects">專案經驗</a>
+        <a href="#contact">聯絡我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <section class="hero">
+      <div class="card hero-left">
+        <div class="kicker"><span class="kdot" aria-hidden="true"></span>專注專案執行・穩健交付</div>
+        <h1>富域事業有限公司</h1>
+        <p class="sub">以清晰流程、準確溝通與可交付成果，協助客戶推進每一個重要里程碑。</p>
+
+        <div class="cta-row">
+          <a class="btn primary" href="#contact">立即洽詢</a>
+          <a class="btn" href="#services">查看服務</a>
+        </div>
+
+        <div class="grid" style="margin-top:18px;">
+          <div class="feature">
+            <h3>重視細節</h3>
+            <p>以文件化、表單化方式控管品質與進度，降低資訊落差。</p>
+          </div>
+          <div class="feature">
+            <h3>流程透明</h3>
+            <p>里程碑、待辦與責任分工清楚可追蹤，讓協作更順。</p>
+          </div>
+          <div class="feature">
+            <h3>快速回應</h3>
+            <p>重要事項優先處理，提供明確回覆與下一步安排。</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card hero-right">
+        <div class="mini">
+          <h3>快速資訊</h3>
+          <div class="stat">
+            <b>公司名稱</b>
+            <div class="muted">富域事業有限公司</div>
+          </div>
+          <div class="stat">
+            <b>服務範圍</b>
+            <div class="muted">可依需求客製（專案/行政/管理）</div>
+          </div>
+          <div class="stat">
+            <b>合作方式</b>
+            <div class="muted">顧問/專案制/長期合作</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="card section">
+      <h2>關於我們</h2>
+      <div class="two">
+        <div class="box">
+          <p class="muted" style="margin:0;">
+            富域事業有限公司致力於以「流程清楚、資訊透明、成果可驗收」的方式推動合作專案。
+            我們相信專業不只是完成任務，更是讓合作方在每個節點都能安心、可掌握。
+          </p>
+        </div>
+        <div class="box">
+          <b>我們的工作方式</b>
+          <ul class="list">
+            <li>需求釐清 → 交付項目定義</li>
+            <li>時程拆解 → 里程碑追蹤</li>
+            <li>文件整理 → 對內對外一致口徑</li>
+            <li>例行回報 → 問題即時處理</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="card section">
+      <h2>服務項目</h2>
+      <p class="muted" style="margin:0 0 12px;">
+        你可以把下列內容改成更符合富域目前實際業務的描述（例如：建設專案、代辦流程、行政支援等）。
+      </p>
+      <div class="grid">
+        <div class="feature">
+          <h3>專案協作與執行</h3>
+          <p>里程碑規劃、進度追蹤、會議紀要與待辦控管。</p>
+        </div>
+        <div class="feature">
+          <h3>文件與表單整合</h3>
+          <p>流程文件、對帳清單、報表彙整與版本管理。</p>
+        </div>
+        <div class="feature">
+          <h3>對外窗口與聯繫</h3>
+          <p>協助溝通協調、資料彙整、重要事項回覆與追蹤。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="card section">
+      <h2>專案經驗</h2>
+      <div class="two">
+        <div class="box">
+          <b>可呈現的內容建議</b>
+          <ul class="list">
+            <li>代表案例（1～3個就好）</li>
+            <li>你扮演的角色與交付成果</li>
+            <li>可量化成果（例如：縮短流程時間、提高準確率）</li>
+          </ul>
+        </div>
+        <div class="box">
+          <b>展示方式</b>
+          <p class="muted" style="margin:8px 0 0;">
+            先用文字版，之後再加上圖片（現場照/示意圖/流程圖）會更有信任感。
+          </p>
+        </div>
+      </div>
+    </section>
+
+   <section id="contact" class="card section">
+  <h2>聯絡我們</h2>
+  <div class="contact">
+    <div class="box">
+      <div class="kv">
+        <div class="k">電話</div>
+        <div class="v">(02) 3501-2588</div>
+      </div>
+      <div class="kv">
+        <div class="k">Email</div>
+        <div class="v">
+          <a href="mailto:fu.yu@msa.hinet.net">fu.yu@msa.hinet.net</a>
+        </div>
+      </div>
+      <div class="kv">
+        <div class="k">地址</div>
+        <div class="v">新北市三峽區學勤路20號1樓</div>
+      </div>
+      <div class="kv">
+        <div class="k">服務時間</div>
+        <div class="v">週一至週五 09:00–18:00</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <b>業務洽詢</b>
+      <p class="muted" style="margin:8px 0 10px;">
+        歡迎透過電話或 Email 與我們聯繫，我們將於上班時間內儘速回覆。
+      </p>
+      <a class="btn primary" href="mailto:fu.yu@msa.hinet.net">
+        寄送 Email 洽詢
+      </a>
+    </div>
+  </div>
+</section>
+
