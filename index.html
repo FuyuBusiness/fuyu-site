@@ -4,9 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>富域事業有限公司｜公司官網</title>
-  <meta name="description" content="富域事業有限公司｜建設開發、不動產服務。聯絡電話 (02) 3501-2588，地址 新北市三峽區學勤路20號1樓。" />
+  <meta name="description" content="富域事業有限公司｜建設開發、不動產服務。聯絡電話 (02) 3501-2588，Email fu.yu@msa.hinet.net，地址 新北市三峽區學勤路20號1樓。" />
+
   <style>
     :root{
+      --bg1:#06091a;
+      --bg2:#070b18;
       --card: rgba(255,255,255,.06);
       --line: rgba(255,255,255,.10);
       --text:#eaf0ff;
@@ -14,7 +17,7 @@
       --brand:#7dd3fc;
       --brand2:#a78bfa;
       --radius:18px;
-      --max: 960px;
+      --max: 980px;
       --shadow: 0 18px 50px rgba(0,0,0,.35);
     }
     *{box-sizing:border-box}
@@ -26,34 +29,49 @@
       background:
         radial-gradient(900px 600px at 20% 10%, rgba(125,211,252,.25), transparent 60%),
         radial-gradient(700px 500px at 80% 20%, rgba(167,139,250,.22), transparent 60%),
-        linear-gradient(180deg, #06091a 0%, #070b18 55%, #06091a 100%);
+        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 55%, var(--bg1) 100%);
       line-height:1.75;
     }
     a{color:inherit}
+
+    /* Header */
     header{
       position:sticky; top:0; z-index:10;
       backdrop-filter: blur(10px);
-      background: rgba(6,9,26,.55);
+      background: rgba(6,9,26,.60);
       border-bottom: 1px solid var(--line);
     }
     .nav{
       max-width:var(--max);
       margin:0 auto;
       padding:12px 16px;
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap; /* ✅ 空間不夠就換行，避免導覽被擠成直排 */
     }
     .brand{
-      display:flex; align-items:center; gap:12px;
+      display:flex;
+      align-items:center;
+      gap:12px;
       text-decoration:none;
       font-weight:800;
       letter-spacing:.4px;
     }
     .logo-img{
-      height:34px;
+      height:70px;   /* ✅ 你指定 70px */
       width:auto;
       display:block;
       object-fit:contain;
+    }
+
+    nav{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
     }
     nav a{
       text-decoration:none;
@@ -63,15 +81,27 @@
       border:1px solid transparent;
       transition:.18s ease;
       font-size:14px;
+      white-space:nowrap; /* ✅ 防止一個字一行 */
     }
     nav a:hover{border-color:var(--line); background: rgba(255,255,255,.04); color:var(--text)}
-    main{max-width:var(--max); margin:0 auto; padding:22px 16px 56px;}
+
+    /* Layout */
+    main{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:22px 16px 56px;
+    }
     .card{
       background: var(--card);
       border:1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
+    section{scroll-margin-top: 140px;} /* ✅ 避免 sticky header 壓到 */
+    .section{padding:18px; margin-top:14px;}
+    .section h2{margin:0 0 10px; font-size:20px;}
+
+    /* Hero */
     .hero{padding:22px; margin-top:18px;}
     .kicker{
       display:inline-flex; align-items:center; gap:8px;
@@ -86,8 +116,29 @@
       background: var(--brand);
       box-shadow: 0 0 0 4px rgba(125,211,252,.15);
     }
-    h1{margin:14px 0 8px; font-size:32px; line-height:1.2;}
+    h1{margin:14px 0 10px; font-size:32px; line-height:1.2;}
     .sub{margin:0; color:var(--muted); font-size:16px;}
+
+    /* ✅ 建案形象圖：等比例縮放、不裁切、不會塞爆畫面 */
+    .hero-img{
+      width:100%;
+      max-width:920px;
+      max-height:540px;
+      object-fit:contain;
+      background: rgba(0,0,0,.12);
+      margin:16px auto 10px;
+      display:block;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+    .note{
+      margin:6px 0 0;
+      color: rgba(234,240,255,.62);
+      font-size:13px;
+    }
+
+    /* Content blocks */
     .grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -103,14 +154,13 @@
     }
     .box h3{margin:0 0 6px; font-size:16px;}
     .box p{margin:0; color:var(--muted); font-size:14px;}
-    section{scroll-margin-top:80px}
-    .section{padding:18px; margin-top:14px;}
-    .section h2{margin:0 0 10px; font-size:20px;}
+
     .two{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap:12px;
     }
+
     .kv{
       display:grid;
       grid-template-columns: 92px 1fr;
@@ -121,6 +171,7 @@
     .kv:last-child{border-bottom:none}
     .k{color:var(--muted); font-size:14px}
     .v{font-weight:700}
+
     .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
@@ -138,6 +189,7 @@
       background: linear-gradient(135deg, rgba(125,211,252,.20), rgba(167,139,250,.16));
     }
     .btn:hover{transform: translateY(-1px)}
+
     .map{
       width:100%;
       height:320px;
@@ -147,6 +199,7 @@
       background: rgba(0,0,0,.10);
     }
     .map iframe{width:100%; height:100%; border:0}
+
     footer{
       text-align:center;
       color: rgba(234,240,255,.65);
@@ -154,10 +207,20 @@
       margin-top:16px;
       padding:10px 0 0;
     }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      nav{
+        width:100%;
+        justify-content:center;
+        margin-top:8px;
+      }
+    }
     @media (max-width: 920px){
+      h1{font-size:28px}
       .grid{grid-template-columns:1fr}
       .two{grid-template-columns:1fr}
-      h1{font-size:28px}
+      .hero-img{max-height:420px}
     }
   </style>
 </head>
@@ -166,9 +229,10 @@
   <header>
     <div class="nav">
       <a class="brand" href="#top" aria-label="回到頂端">
-        <img src="project-hero.jpg" class="hero-img">
+        <img src="logo.png" alt="富域事業有限公司 LOGO" class="logo-img">
         <span>富域事業有限公司</span>
       </a>
+
       <nav aria-label="網站導覽">
         <a href="#about">公司介紹</a>
         <a href="#contact">聯絡我們</a>
@@ -179,17 +243,22 @@
 
   <main id="top">
     <section class="card hero">
-      <div class="kicker"><span class="dot" aria-hidden="true"></span>穩健執行｜透明資訊｜長期價值</div>
-      <h1>富域事業有限公司</h1>
+      <div class="kicker"><span class="dot" aria-hidden="true"></span>建設開發｜不動產服務</div>
+      <h1>北大富御</h1>
+
+      <!-- ✅ 建案形象圖（放根目錄：project-hero.jpg） -->
+      <img src="project-hero.jpg" alt="北大富御 建案外觀示意圖" class="hero-img">
+      <p class="note">※ 本圖為外觀示意圖，實際以現場及相關公告為準。</p>
+
       <p class="sub">
-        富域事業有限公司提供建設開發與不動產服務，
-        以制度化流程、清晰溝通，協助客戶與合作夥伴安心推進每一個重要節點。
+        富域事業有限公司專注於建設開發與不動產服務，
+        以穩健規劃、透明流程與可追溯文件管理，協助客戶與合作夥伴安心推進每一個重要節點。
       </p>
 
       <div class="grid" aria-label="服務範疇">
         <div class="box">
           <h3>建設開發</h3>
-          <p>專案推進、節點控管、整合與跨單位協作。</p>
+          <p>專案推進、節點控管、文件整合與跨單位協作。</p>
         </div>
         <div class="box">
           <h3>不動產服務</h3>
@@ -204,7 +273,8 @@
         <div class="box" style="min-height:auto;">
           <p style="margin:0; color:var(--muted);">
             我們重視每一次合作的「可交付成果」與「風險可視化」。
-            讓專案進度與交易流程具備可追溯性，進一步提升決策效率與合作信任。
+            透過清單化管理、例行回報與文件留存，讓專案進度與交易流程具備可追溯性，
+            進一步提升決策效率與合作信任。
           </p>
         </div>
         <div class="box" style="min-height:auto;">
@@ -270,11 +340,3 @@
   </script>
 </body>
 </html>
-  
-
-
-
-
-
-
-
